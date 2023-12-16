@@ -7,10 +7,6 @@ import 'package:pokedex/cubit/pokemon_state.dart';
 import 'package:pokedex/models/pokemon_model.dart';
 import 'package:pokedex/repositories/pokemon_repositories.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/auth_cubit.dart';
-
-// pokemon_list_cubit.dart
-// ... (previous code)
 
 // Events
 class ToggleFavorite extends PokemonListEvent {

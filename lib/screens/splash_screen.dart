@@ -2,11 +2,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:pokedex/cubit/auth_cubit.dart';
+
 import 'package:pokedex/screens/auth_checker.dart';
-import 'package:pokedex/screens/homescreen.dart';
-import 'package:pokedex/screens/login_screen.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

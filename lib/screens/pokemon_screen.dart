@@ -7,15 +7,8 @@ import 'package:pokedex/cubit/pokemon_state.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/models/pokemon_model.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:pokedex/screens/favourite_screen.dart';
-import '../cubit/auth_cubit.dart';
-
-// main.dart
-// ... (previous code)
-
-// main.dart
-// ... (previous code)
 
 class PokemonListApp extends StatelessWidget {
   @override

@@ -19,12 +19,3 @@ class FavoriteState extends Equatable {
     return FavoriteState(favorites: favorites ?? this.favorites);
   }
 }
-
-
-// pokemon_cubit.dart
-
-// ... (previous code)
-
-
-
-

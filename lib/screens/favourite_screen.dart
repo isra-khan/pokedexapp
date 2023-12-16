@@ -1,10 +1,7 @@
-// favorite_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/cubit/favourite_cubit.dart';
 import 'package:pokedex/cubit/favourite_state.dart';
-import 'package:pokedex/cubit/pokemon__cubit.dart';
 
 class FavoriteScreen extends StatelessWidget {
   @override
