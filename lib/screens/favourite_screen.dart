@@ -8,7 +8,10 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Favorite Pokemon'),
+        title: Text(
+          'Favorite Pokemon',
+          style: TextStyle(color: Colors.purple),
+        ),
       ),
       body: BlocBuilder<FavoriteCubit, FavoriteState>(
         builder: (context, state) {

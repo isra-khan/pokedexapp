@@ -1,5 +1,3 @@
-// pokemon_repository.dart
-// pokemon_repository.dart
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:pokedex/models/pokemon_model.dart';

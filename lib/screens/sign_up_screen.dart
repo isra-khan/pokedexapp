@@ -32,7 +32,10 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up Form'),
+        title: Text(
+          'Sign Up Form',
+          style: TextStyle(color: Colors.purple),
+        ),
       ),
       body: FormBuilder(
         autovalidateMode: AutovalidateMode.onUserInteraction,
