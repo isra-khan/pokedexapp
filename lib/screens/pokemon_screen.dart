@@ -16,7 +16,11 @@ class PokemonListApp extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Pokedex App',
-          style: TextStyle(color: textColor),
+          style: TextStyle(
+            color: textColor,
+            fontSize: 15,
+            fontWeight: FontWeight.w500,
+          ),
         ),
         actions: [
           IconButton(
@@ -30,15 +34,14 @@ class PokemonListApp extends StatelessWidget {
                 MaterialPageRoute(builder: (contexts) {
                   contexts.read<FavoriteCubit>().fetchFavorites();
                   return FavoriteScreen();
-                } // Use the correct screen widget here
-                    ),
+                }),
               );
             },
           ),
           IconButton(
             icon: Icon(
               Icons.logout_sharp,
-              color: Colors.purple,
+              color: textColor,
             ),
             onPressed: () {
               AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
@@ -117,7 +120,7 @@ class PokemonList extends StatelessWidget {
               return IconButton(
                 icon: Icon(
                   isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: isFavorite ? Colors.red : null,
+                  color: isFavorite ? textColor : null,
                 ),
                 onPressed: () {
                   context.read<FavoriteCubit>().toggleFavorite(pokemon);

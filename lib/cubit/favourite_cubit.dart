@@ -13,14 +13,12 @@ class FavoriteCubit extends Cubit<FavoriteState> {
   FirebaseAuth auth = FirebaseAuth.instance;
 
   void toggleFavorite(Pokemon pokemonName) async {
-    final newFavorites = List<Pokemon>.from(state.favorites);
+    final currentFavorites = state.favorites;
+    final newFavorites = [...currentFavorites, pokemonName];
 
     if (newFavorites.contains(pokemonName.name)) {
-      newFavorites.remove(pokemonName);
+      newFavorites.remove(pokemonName.id);
     } else {
-      final currentFavorites = state.favorites;
-      final newFavorites = [...currentFavorites, pokemonName];
-      newFavorites.add(pokemonName);
       final String favoritesString =
           json.encode(newFavorites.map((p) => p.toJson()).toList());
       await _preferences.setString(

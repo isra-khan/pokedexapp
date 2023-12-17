@@ -26,98 +26,6 @@ class SignUpForm extends StatelessWidget {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Sign Up Form',
-          style: TextStyle(color: textColor),
-        ),
-      ),
-      body: FormBuilder(
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        key: _formKey,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.1),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                FormBuilderTextField(
-                  name: 'username',
-                  controller: _usernnameController,
-                  decoration: InputDecoration(
-                      labelText: 'Username',
-                      labelStyle: TextStyle(fontSize: 14)),
-                  validator: FormBuilderValidators.compose([
-                    (value) {
-                      // Validate that the input only contains alphabets and spaces
-                      if (value != null &&
-                          !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-                        return 'Please enter only alphabets and spaces';
-                      }
-                      return null;
-                    },
-                  ]),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-                FormBuilderTextField(
-                  name: 'email',
-                  controller: _emailController,
-                  validator: FormBuilderValidators.compose([
-                    FormBuilderValidators.required(),
-                    FormBuilderValidators.email(),
-                  ]),
-                  decoration: InputDecoration(
-                      labelText: 'Email', labelStyle: TextStyle(fontSize: 14)),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-                FormBuilderTextField(
-                  name: 'password',
-                  controller: _passwordController,
-                  decoration: InputDecoration(
-                      labelText: 'Password',
-                      labelStyle: TextStyle(fontSize: 14)),
-                  obscureText: true,
-                  validator: FormBuilderValidators.compose([
-                    FormBuilderValidators.required(),
-                    _passwordValidator,
-                  ]),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-                FormBuilderTextField(
-                  name: 'confirm_password',
-                  controller: _confirmPasswordController,
-                  decoration: InputDecoration(
-                      labelText: 'Confirm Password',
-                      labelStyle: TextStyle(fontSize: 14)),
-                  obscureText: true,
-                  validator: FormBuilderValidators.compose([
-                    FormBuilderValidators.required(),
-                  ]),
-                ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.8,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      //_signup(context);
-
-                      _signup(context);
-                    },
-                    child: Text('Sign Up'),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   String? _passwordValidator(value) {
     if (value.isEmpty) {
       return 'Password is required';
@@ -164,5 +72,102 @@ class SignUpForm extends StatelessWidget {
 
     // Name is valid
     return null;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Sign Up Form',
+          style: TextStyle(
+            color: textColor,
+            fontSize: 15,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+      body: FormBuilder(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        key: _formKey,
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.1),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: MediaQuery.of(context).size.height * 0.04),
+                FormBuilderTextField(
+                  name: 'username',
+                  controller: _usernnameController,
+                  decoration: InputDecoration(
+                      labelText: 'Username',
+                      labelStyle: TextStyle(fontSize: 14, color: textColor)),
+                  validator: FormBuilderValidators.compose([
+                    (value) {
+                      // Validate that the input only contains alphabets and spaces
+                      if (value != null &&
+                          !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+                        return 'Please enter only alphabets and spaces';
+                      }
+                      return null;
+                    },
+                  ]),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                FormBuilderTextField(
+                  name: 'email',
+                  controller: _emailController,
+                  validator: FormBuilderValidators.compose([
+                    FormBuilderValidators.required(),
+                    FormBuilderValidators.email(),
+                  ]),
+                  decoration: InputDecoration(
+                      labelText: 'Email',
+                      labelStyle: TextStyle(fontSize: 14, color: textColor)),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                FormBuilderTextField(
+                  name: 'password',
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                      labelText: 'Password',
+                      labelStyle: TextStyle(fontSize: 14, color: textColor)),
+                  obscureText: true,
+                  validator: FormBuilderValidators.compose([
+                    FormBuilderValidators.required(),
+                    _passwordValidator,
+                  ]),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                FormBuilderTextField(
+                  name: 'confirm_password',
+                  controller: _confirmPasswordController,
+                  decoration: InputDecoration(
+                      labelText: 'Confirm Password',
+                      labelStyle: TextStyle(fontSize: 14, color: textColor)),
+                  obscureText: true,
+                  validator: FormBuilderValidators.compose([
+                    FormBuilderValidators.required(),
+                  ]),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.05),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      //_signup(context);
+
+                      _signup(context);
+                    },
+                    child: Text('Sign Up', style: TextStyle(color: textColor)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

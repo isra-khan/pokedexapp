@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:pokedex/constant/color.dart';
 import 'package:pokedex/screens/sign_up_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/auth_cubit.dart';
@@ -21,6 +22,13 @@ class LoginForm extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Login Form',
+          style: TextStyle(
+              fontSize: 15, fontWeight: FontWeight.w500, color: textColor),
+        ),
+      ),
       body: FormBuilder(
         key: _formKey,
         child: Padding(
@@ -37,7 +45,9 @@ class LoginForm extends StatelessWidget {
                   controller: _emailController,
                   name: 'email',
                   decoration: InputDecoration(
-                      labelText: 'Email', labelStyle: TextStyle(fontSize: 14)),
+                    labelText: 'Email',
+                    labelStyle: TextStyle(fontSize: 14, color: textColor),
+                  ),
                   validator: FormBuilderValidators.compose([
                     FormBuilderValidators.required(),
                     FormBuilderValidators.email(),
@@ -49,7 +59,7 @@ class LoginForm extends StatelessWidget {
                   name: 'password',
                   decoration: InputDecoration(
                       labelText: 'Password',
-                      labelStyle: TextStyle(fontSize: 14)),
+                      labelStyle: TextStyle(fontSize: 14, color: textColor)),
                   obscureText: true,
                   validator: FormBuilderValidators.compose([
                     FormBuilderValidators.required(),
@@ -63,7 +73,10 @@ class LoginForm extends StatelessWidget {
                     onPressed: () {
                       _submitForm(context);
                     },
-                    child: Text('Login'),
+                    child: Text(
+                      'Login',
+                      style: TextStyle(color: textColor),
+                    ),
                   ),
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.02),
@@ -76,7 +89,8 @@ class LoginForm extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => SignUpForm()));
                       },
-                      child: Text('Sign Up'),
+                      child:
+                          Text('Sign Up', style: TextStyle(color: textColor)),
                     )),
               ],
             ),

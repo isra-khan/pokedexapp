@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex/constant/color.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -23,6 +24,7 @@ class AuthCubit extends Cubit<bool> {
         email: email,
         password: password,
       );
+
       Fluttertoast.showToast(
           msg: "Successfully Login",
           toastLength: Toast.LENGTH_SHORT,
@@ -82,16 +84,16 @@ class AuthCubit extends Cubit<bool> {
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
           timeInSecForIosWeb: 1,
-          backgroundColor: Colors.purple,
+          backgroundColor: textColor,
           textColor: Colors.white,
           fontSize: 16.0);
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
       Fluttertoast.showToast(
           msg: e.toString(),
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.BOTTOM,
           timeInSecForIosWeb: 1,
-          backgroundColor: Colors.purple,
+          backgroundColor: Colors.red,
           textColor: Colors.white,
           fontSize: 16.0);
 
