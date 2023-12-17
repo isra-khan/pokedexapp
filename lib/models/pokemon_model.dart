@@ -27,6 +27,24 @@ class Pokemon extends Equatable {
     );
   }
 
+  factory Pokemon.fromJson(Map<String, dynamic> json) {
+    return Pokemon(
+      name: json['name'] ?? '',
+      id: json['id'] ?? 0,
+      imageUrl: json['imageUrl'] ?? '',
+      // Map other properties from JSON...
+    );
+  }
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'imageUrl': imageUrl,
+    };
+  }
+
+  // Factory method to create Pokemon object from a map
+
   @override
   List<Object?> get props => [id, name, imageUrl, isFavorite];
 }

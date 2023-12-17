@@ -56,6 +56,8 @@ dev_dependencies:
   shared_preferences: ^2.0.12
   fluttertoast:
   http:
+  cloud_firestore: ^4.13.6
+  firebase_database: 
   
   
 

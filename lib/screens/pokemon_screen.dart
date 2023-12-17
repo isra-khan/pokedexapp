@@ -28,12 +28,11 @@ class PokemonListApp extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (contexts) => BlocProvider.value(
-                      value: contexts.read<FavoriteCubit>(),
-                      child:
-                          FavoriteScreen()), // Use the correct screen widget here
-                ),
+                MaterialPageRoute(builder: (contexts) {
+                  contexts.read<FavoriteCubit>().fetchFavorites();
+                  return FavoriteScreen();
+                } // Use the correct screen widget here
+                    ),
               );
             },
           ),

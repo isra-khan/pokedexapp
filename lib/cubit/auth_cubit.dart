@@ -6,56 +6,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 part 'auth_state.dart';
 
-// class AuthCubit extends Cubit<AuthState> {
-//   final FirebaseAuth _auth = FirebaseAuth.instance;
-
-//   AuthCubit() : super(AuthInitial());
-//   void checkAuthenticationStatus() async {
-//     SharedPreferences prefs = await SharedPreferences.getInstance();
-//     bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
-
-//     if (isLoggedIn) {
-//       emit(AuthenticationAuthenticated());
-//     } else {
-//       emit(AuthenticationUnauthenticated());
-//     }
-//   }
-
-//   void login(String email, String password) async {
-//     try {
-//       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-//         email: email,
-//         password: password,
-//       );
-//       emit(AuthSuccess(user: userCredential.user));
-//     } on FirebaseAuthException catch (e) {
-//       if (e.code == 'user-not-found' || e.code == 'wrong-password') {
-//         emit(AuthError(error: 'Invalid email or password'));
-//       } else {
-//         emit(AuthError(error: 'Login Error: $e'));
-//       }
-//     }
-//   }
-
-//   void signup(String email, String password) async {
-//     try {
-//       UserCredential userCredential =
-//           await _auth.createUserWithEmailAndPassword(
-//         email: email,
-//         password: password,
-//       );
-
-//       emit(AuthSuccess(user: userCredential.user));
-//     } on FirebaseAuthException catch (e) {
-//       if (e.code == 'email-already-in-use') {
-//         emit(AuthError(error: 'The account already exists for that email'));
-//       } else {
-//         emit(AuthError(error: 'Signup Error: $e'));
-//       }
-//     }
-//   }
-// }
-
 class AuthCubit extends Cubit<bool> {
   AuthCubit() : super(false) {
     _initAuthState();
