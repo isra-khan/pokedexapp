@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokedex/constant/color.dart';
 import 'package:pokedex/cubit/favourite_cubit.dart';
 import 'package:pokedex/cubit/favourite_state.dart';
 
@@ -10,7 +11,7 @@ class FavoriteScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Favorite Pokemon',
-          style: TextStyle(color: Colors.purple),
+          style: TextStyle(color: textColor),
         ),
       ),
       body: BlocBuilder<FavoriteCubit, FavoriteState>(

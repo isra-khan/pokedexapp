@@ -1,7 +1,3 @@
-// pokemon_list_cubit.dart
-// ... (previous code)
-
-// Events
 import 'package:pokedex/cubit/favourite_cubit.dart';
 import 'package:pokedex/cubit/pokemon_state.dart';
 import 'package:pokedex/models/pokemon_model.dart';
@@ -19,16 +15,6 @@ class ToggleFavorite extends PokemonListEvent {
 }
 
 class FetchFavorites extends PokemonListEvent {}
-
-// States
-class PokemonListFavorites extends PokemonListState {
-  final List<Pokemon> favoritePokemonList;
-
-  PokemonListFavorites({required this.favoritePokemonList});
-
-  @override
-  List<Object?> get props => [favoritePokemonList];
-}
 
 // Cubit
 class PokemonListCubit extends Cubit<PokemonListState> {

@@ -1,7 +1,5 @@
-// Import necessary packages
-import 'dart:async';
-
 import 'package:flutter/material.dart';
+import 'package:pokedex/constant/color.dart';
 
 import 'package:pokedex/screens/auth_checker.dart';
 
@@ -13,7 +11,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-
   late Animation<double> _animation;
 
   @override
@@ -64,9 +61,7 @@ class _SplashScreenState extends State<SplashScreen>
             Text(
               'Pokedex App',
               style: TextStyle(
-                  color: Colors.purple,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w800),
+                  color: textColor, fontSize: 30, fontWeight: FontWeight.w800),
             ),
           ],
         ),

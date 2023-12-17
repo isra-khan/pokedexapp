@@ -18,6 +18,15 @@ class ToggleFavorite extends PokemonListEvent {
   List<Object?> get props => [pokemonId];
 }
 
+class PokemonListFavorites extends PokemonListState {
+  final List<Pokemon> favoritePokemonList;
+
+  PokemonListFavorites({required this.favoritePokemonList});
+
+  @override
+  List<Object?> get props => [favoritePokemonList];
+}
+
 // States
 abstract class PokemonListState extends Equatable {
   @override

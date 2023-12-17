@@ -1,15 +1,8 @@
 import 'dart:convert';
-
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:pokedex/cubit/favourite_state.dart';
-import 'package:pokedex/cubit/pokemon__cubit.dart';
 import 'package:pokedex/models/pokemon_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
-
-import 'package:firebase_database/firebase_database.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FavoriteCubit extends Cubit<FavoriteState> {
@@ -41,7 +34,6 @@ class FavoriteCubit extends Cubit<FavoriteState> {
     final currentUser = auth.currentUser;
     if (currentUser != null) {
       try {
-        // Fetch favorites for the current user from the database
         final String favoritesString =
             _preferences.getString('${currentUser!.uid}_favorites') ?? '';
         final List<dynamic> favoritesJson = json.decode(favoritesString);
@@ -53,7 +45,6 @@ class FavoriteCubit extends Cubit<FavoriteState> {
           emit(FavoriteState(favorites: favorites));
         }
       } catch (error) {
-        // Handle errors if needed
         print('Error fetching favorites: $error');
       }
     }

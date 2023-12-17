@@ -1,9 +1,4 @@
-// favorite_state.dart
-
-import 'package:pokedex/cubit/favourite_cubit.dart';
 import 'package:pokedex/models/pokemon_model.dart';
-import 'package:pokedex/repositories/pokemon_repositories.dart';
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 class FavoriteState extends Equatable {

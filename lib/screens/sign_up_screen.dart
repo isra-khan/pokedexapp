@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-
 import 'package:form_builder_validators/form_builder_validators.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokedex/constant/color.dart';
 import '../cubit/auth_cubit.dart';
 
 class SignUpForm extends StatelessWidget {
   final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
-  final TextEditingController _emailController = TextEditingController();
 
+  final TextEditingController _emailController = TextEditingController();
   final TextEditingController _usernnameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
@@ -34,7 +32,7 @@ class SignUpForm extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Sign Up Form',
-          style: TextStyle(color: Colors.purple),
+          style: TextStyle(color: textColor),
         ),
       ),
       body: FormBuilder(

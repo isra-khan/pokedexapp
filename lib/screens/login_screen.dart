@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:pokedex/screens/homescreen.dart';
 import 'package:pokedex/screens/sign_up_screen.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../cubit/auth_cubit.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -12,8 +9,16 @@ class LoginForm extends StatelessWidget {
   final GlobalKey<FormBuilderState> _formKey = GlobalKey<FormBuilderState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  void _submitForm(BuildContext context) {
+    if (_formKey.currentState!.saveAndValidate()) {
+      String email = _emailController.text;
+      String password = _passwordController.text;
 
-  @override
+      AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
+      authCubit.login(email, password);
+    }
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: FormBuilder(
@@ -79,15 +84,5 @@ class LoginForm extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void _submitForm(BuildContext context) {
-    if (_formKey.currentState!.saveAndValidate()) {
-      String email = _emailController.text;
-      String password = _passwordController.text;
-
-      AuthCubit authCubit = BlocProvider.of<AuthCubit>(context);
-      authCubit.login(email, password);
-    }
   }
 }

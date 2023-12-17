@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-part 'auth_state.dart';
-
 class AuthCubit extends Cubit<bool> {
   AuthCubit() : super(false) {
     _initAuthState();
@@ -59,13 +57,12 @@ class AuthCubit extends Cubit<bool> {
             textColor: Colors.white,
             fontSize: 16.0);
       }
-      // Handle authentication error, for simplicity, just emit false
+
       emit(false);
     }
   }
 
   void logout() async {
-    // Replace this with your Firebase sign out logic
     await FirebaseAuth.instance.signOut();
 
     SharedPreferences prefs = await SharedPreferences.getInstance();

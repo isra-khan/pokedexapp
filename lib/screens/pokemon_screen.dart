@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:pokedex/constant/color.dart';
 import 'package:pokedex/cubit/auth_cubit.dart';
 import 'package:pokedex/cubit/favourite_cubit.dart';
 import 'package:pokedex/cubit/favourite_state.dart';
 import 'package:pokedex/cubit/pokemon__cubit.dart';
 import 'package:pokedex/cubit/pokemon_state.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokedex/models/pokemon_model.dart';
-
 import 'package:pokedex/screens/favourite_screen.dart';
 
 class PokemonListApp extends StatelessWidget {
@@ -17,13 +16,13 @@ class PokemonListApp extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Pokedex App',
-          style: TextStyle(color: Colors.purple),
+          style: TextStyle(color: textColor),
         ),
         actions: [
           IconButton(
             icon: Icon(
               Icons.favorite,
-              color: Colors.purple,
+              color: textColor,
             ),
             onPressed: () {
               Navigator.push(
