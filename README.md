@@ -19,14 +19,13 @@ A comprehensive mobile Pokedex application built with Flutter, featuring Firebas
 
 ## 📱 Screenshots
 
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-![Simulator Screenshot - iPhone 16 Pro - 2025-06-10 at 16 48 03](https://github.com/user-attachments/assets/9112d8d2-ca75-4593-9118-fcfbd9a222bb)
-![Simulator Screenshot - iPhone 16 Pro - 2025-06-10 at 17 09 29](https://github.com/user-attachments/assets/a65f8a9a-185e-42d0-9579-f29bb8f3c21a)
-![Simul![Simulator Screenshot - iPhone 16 Pro - 2025-06-10 at 17 15 52](https://github.com/user-attachments/assets/9cc9e7ad-24f8-4ff6-aa51-ad28fa1d27a6)
-ator Screenshot - iPhone 16 Pro - 2025-06-10 at 16 51 01](https://github.com/user-attachments/assets/fcac72dd-7aa0-4789-833d-1a783ea5f86e)
-![Simulator![Simulator Screenshot - iPhone 16 Pro - 2025-06-10 at 17 15 52](https://github.com/user-attachments/assets/baef6ee5-addc-4fb7-809e-7f931598114c)
- Screenshot - iPhone 16 Pro - 2025-06-10 at 17 15 36](https://github.com/user-attachments/assets/23e6fdb3-7c8b-4525-8eaa-9e36fd5b2d36)
+
+<img src="https://github.com/user-attachments/assets/9112d8d2-ca75-4593-9118-fcfbd9a222bb" alt="Login Screen" width="200">
+<img src="https://github.com/user-attachments/assets/a65f8a9a-185e-42d0-9579-f29bb8f3c21a" alt="Signup Screen" width="200">
+<img src="https://github.com/user-attachments/assets/9cc9e7ad-24f8-4ff6-aa51-ad28fa1d27a6" alt="Pokemon List" width="200">
+<img src="https://github.com/user-attachments/assets/fcac72dd-7aa0-4789-833d-1a783ea5f86e" alt="Pokemon Detail 1" width="200">
+<img src="https://github.com/user-attachments/assets/baef6ee5-addc-4fb7-809e-7f931598114c" alt="Pokemon Detail 2" width="200">
+<img src="https://github.com/user-attachments/assets/23e6fdb3-7c8b-4525-8eaa-9e36fd5b2d36" alt="Another Pokemon Detail" width="200">
 ## 🛠️ Technologies Used
 
 * **Flutter:** Google's UI toolkit for building natively compiled applications .
