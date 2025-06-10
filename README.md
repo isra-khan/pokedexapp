@@ -15,15 +15,16 @@ A comprehensive mobile Pokedex application built with Flutter, featuring Firebas
 * **Real-time Data:** Fetches up-to-date Pokemon information from a public API.
 * **Efficient State Management:** Leverages the **Bloc pattern** for predictable and scalable state management throughout the application.
 * **Local Persistence:** Uses `shared_preferences` for lightweight local data storage (e.g., user session).
-* **User-Friendly UI:** Clean and intuitive interface designed for a seamless user experience.
+
+-Friendly UI:** Clean and intuitive interface designed for a seamless user experience.
 
 ## 📱 Screenshots
 
 
 <img src="https://github.com/user-attachments/assets/9112d8d2-ca75-4593-9118-fcfbd9a222bb" alt="Login Screen" width="200">
-<img src="https://github.com/user-attachments/assets/a65f8a9a-185e-42d0-9579-f29bb8f3c21a" alt="Signup Screen" width="200">
-
+<img src="https://github.com/user-attachments/assets/a65f8a9a-185e-42d0-9579-f29bb8f3c21a" alt="Signup Screen" width="200">s
 <img src="https://github.com/user-attachments/assets/fcac72dd-7aa0-4789-833d-1a783ea5f86e" alt="Pokemon Detail 1" width="200">
+<img src="https://github.com/user-attachments/assets/a4515cbd-4a3c-4560-b2b1-53e7afcb7d1a" alt="Pokemon Detail 1" width="200">
 <img src="https://github.com/user-attachments/assets/baef6ee5-addc-4fb7-809e-7f931598114c" alt="Pokemon Detail 2" width="200">
 <img src="https://github.com/user-attachments/assets/23e6fdb3-7c8b-4525-8eaa-9e36fd5b2d36" alt="Another Pokemon Detail" width="200">
 ## 🛠️ Technologies Used
